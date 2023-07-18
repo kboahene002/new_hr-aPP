@@ -17,8 +17,8 @@ $('.form').submit(function (e) {
         success: function (response) {
             console.log(response)
         },
-        error: function (xhr, status, error) {
-            console.log(status.status)
+        error: function (data) {
+            console.log(data)
         }
     });
 
@@ -75,29 +75,7 @@ $('#division').change(function () {
                                 });
 
 
-                                $('#job_title').change(function () {
-                                    let job_title = $('#job_title').val();
-                                    console.log(job_title);
-                                    if(job_title != ""){
-                                        $.ajax({
-                                            url: "filter",
-                                            type: 'POST',
-                                            data: {
-                                                'name': job_title , 
-                                            },
-                                            headers: {
-                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr(
-                                                    'content')
-                                            },
-                                            success:function(data){
-                                                console.log(data);
-                                            }
-                                        });
-                                    }else{
-                                        console.log('empty');
-                                    }
-
-                                })
+                               
                             }
 
                         });
@@ -113,6 +91,47 @@ $('#division').change(function () {
                 console.error(data);
             }
         });
+        $('#job_title').change(function () {
+            let job_title = $('#job_title').val();
+            console.log(job_title);
+            if(job_title != ""){
+                $.ajax({
+                    url: "filter",
+                    type: 'POST',
+                    data: {
+                        'name': job_title , 
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr(
+                            'content')
+                    },
+                    success:function(data){
+                        console.log(data);
+
+                        $('#job_category').empty().append('<option value="">Select ...</option>');
+                        console.log( data.job_category.job_category_name);
+                        $('#job_category').val( data.job_category.job_category_name );
+                        $('#job_category_id').val( data.job_category.id );
+                        $('#starting_salary').val( data.notch.annual_salary );
+                        $('#starting_salary_id').val( data.notch.id );
+                        $('#starting_salary_id').val( data.notch.id );
+                        $('#monthly_salary').val( (data.notch.annual_salary / 12).toFixed(2));
+
+                       
+
+                        
+
+                                // $.each(data.notch, function (index, item) {
+                                //     $('#starting_salary').val( data.notch.annual_salry );
+                                // });
+                        
+                    }
+                });
+            }else{
+                console.log('empty');
+            }
+
+        })
     } else {
         $('#department').empty().append('<option value="">...</option>');
         console.log('empty');

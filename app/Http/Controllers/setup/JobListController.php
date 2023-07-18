@@ -25,7 +25,8 @@ class JobListController extends Controller
 
     public function index()
     {
-        $jobList = JobList::orderBy('created_at' , "ASC")->get();
+        $jobList = JobList::with('notch')->orderBy('created_at' , "ASC")->get();
+        // return $jobList;
         $department = DepartmentList::all();
         $jobCategory = JobCategories::all();
         $salaryNotch = SalaryNotch::all();
@@ -58,10 +59,10 @@ class JobListController extends Controller
             //save data into database
             $insert = new JobList();
             $insert->job_title = $request->job_title;
-            $insert->job_category = $request->job_category;
-            $insert->department = $request->department;
+            $insert->job_category_id = $request->job_category;
+            $insert->department_id = $request->department;
             $insert->job_schedule = $request->job_schedule;
-            $insert->starting_salary = $request->starting_salary;
+            $insert->starting_salary_id = $request->starting_salary;
             $insert->description = $request->description;
     
             $save = $insert->save();
@@ -103,10 +104,10 @@ class JobListController extends Controller
             }else{
                 $update = jobList::where('id' , $id)->update([
                     'job_title'=>$request->job_title ,
-                    'job_category'=>$request->job_category,
-                    'department'=>$request->department,
+                    'job_category_id'=>$request->job_category,
+                    'department_id'=>$request->department,
                     'job_schedule'=>$request->job_schedule,
-                    'starting_salary'=>$request->starting_salary,
+                    'starting_salary_id'=>$request->starting_salary,
                     'description' => $request->description
                 ]);
                 if($update){

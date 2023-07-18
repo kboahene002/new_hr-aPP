@@ -31,11 +31,11 @@ return new class extends Migration
 
             $table->string('division');
             $table->string('first_app_date');
-            $table->string('department');
-            $table->string('qualification');
-            $table->string('job_title');
-            $table->string('starting_salary');
-            $table->string('job_category');
+            $table->string('department_id');
+            $table->string('qualification_id');
+            $table->string('job_title_id');
+            $table->string('starting_salary_id');
+            $table->string('job_category_id');
             $table->string('monthly_salary');
 
             //contact Information

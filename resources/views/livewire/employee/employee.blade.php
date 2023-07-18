@@ -30,12 +30,12 @@
                             <!--begin::Input group-->
 
                             <div class="row">
-                                <div class="col-md-2">
+                                <div class="mt-3 col-md-2">
                                     <div class="">
                                         <!--begin::Label-->
 
-                                        <label class="fs-6 fw-semibold mt-3">
-                                            <span class="mt-3">Insert Image</span>
+                                        <label class="mt-5 fs-6 fw-semibold mt-3">
+                                            <span class="">Insert Image</span>
                                             <span class="ms-1" data-bs-toggle="tooltip"
                                                 title="Allowed file types: png, jpg, jpeg.">
                                                 <i class="ki-duotone ki-information fs-7">
@@ -54,9 +54,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-2">
-                                    <input type="file" class="dropify" name="avatar" data-min-width="200" />
+                                    <input type="file"  name="avatar" data-min-width="200" />
                                 </div>
-                                <div class="col-md-10">
+                                <div class="container pl-3 col-md-10">
                                     <small class="badge badge-success">Personal information</small>
 
                                     <div class="row">
@@ -490,7 +490,7 @@
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <select wire:model='marital_status_name' name="marital_status_name" class="form-control" id="">
+                                                <select wire:model='marital_status_id' name="marital_status_id" class="form-control" id="">
                                                     <option value="">Select...</option>
                                                     @foreach ($marital_status as $item)
                                                         <option value="{{$item->id}}">{{$item->marital_status_name}}</option>
@@ -515,8 +515,11 @@
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <select wire:model='work_station' name="work_station" class="form-control" id="">
+                                                <select wire:model='work_station' name="work_station_id" class="form-control" id="">
                                                     <option value="">Select...</option>
+                                                    @foreach ($workStation as $item)
+                                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                                    @endforeach
                                                 </select>
                                                 <!--end::Input-->
                                             </div>
@@ -537,7 +540,7 @@
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <select wire:model='staff_status_name' name="staff_status" class="form-control" id="">
+                                                <select wire:model='staff_status_id' name="staff_status_id" class="form-control" id="">
                                                     <option value="">Select ...</option>
                                                     @foreach ($staff_status as $item)
                                                         <option value="{{$item->id}}">{{$item->staff_status_name}}</option>
@@ -583,7 +586,7 @@
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <select wire:model='department' id="department"  name="department" class="form-control" id="">
+                                                <select wire:model='department' id="department"  name="department_id" class="form-control" id="">
                                                     <option value=""> ...</option>
                                                 </select>
                                                 <!--end::Input-->
@@ -599,7 +602,7 @@
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <select wire:model='job_title' name="job_title" class="form-control" id="job_title">
+                                                <select wire:model='job_title' name="job_title_id" class="form-control" id="job_title">
                                                     <option value=""> ... </option>
                                                 </select>
                                                 <!--end::Input-->
@@ -616,7 +619,12 @@
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <input  wire:model='job_category' type="text" class="form-control" id="job_category" name="job_category" readonly>
+                                                {{-- <select class=form-control readonly="readonly" name="" id="job_category"> 
+                                                    <option value="...">..</option>
+                                                    <option value="...">sfsdfsdfs</option>
+                                                </select> --}}
+                                                <input  wire:model='job_category' type="text"   class="form-control form-control-solid" id="job_category" name="job_category" readonly>
+                                                <input  wire:model='' type="text" class="form-control" hidden id="job_category_id"  name="job_category_id" readonly>
                                                 <!--end::Input-->
                                             </div>
                                         </div>
@@ -646,8 +654,11 @@
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <select wire:model='qualification' name="qualification" class="form-control" id="">
+                                                <select wire:model='qualification' name="qualification_id" class="form-control" id="">
                                                     <option value=""> Select ... </option>
+                                                    @foreach ($qualificationType as $item)
+                                                        <option value="{{$item->id}}"> {{$item->qualification_level}} </option>
+                                                    @endforeach
                                                 </select>
                                                 <!--end::Input-->
                                             </div>
@@ -662,9 +673,9 @@
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <select wire:model='starting_salary' name="starting_salary" class="form-control" id="">
-                                                    <option value=""> ... </option>
-                                                </select>
+                                                <input type="text" name="starting_salary" readonly class="form-control form-control-solid" id="starting_salary" >
+                                                <input type="text" name="starting_salary_id" hidden class="form-control" id="starting_salary_id" >
+                                               
                                                 <!--end::Input-->
                                             </div>
                                         </div>
@@ -677,7 +688,7 @@
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <input type="text" wire:model='monthly_salary' class="form-control" disabled name="monthly_salary">
+                                                <input type="text" wire:model='monthly_salary' class="form-control form-control-solid" readonly id="monthly_salary" name="monthly_salary">
                                                 <!--end::Input-->
                                             </div>
                                         </div>
@@ -731,9 +742,12 @@
         
                                             </label>
                                             <!--end::Label-->
-                                            <!--begin::Input-->
-                                            <input wire:model='city_region' type="text" class="form-control" name="city_region">
-                                            <!--end::Input-->
+                                            <select class="form-control" wire:model='city_region' name="city_region" id="">
+                                                <option >Select ...</option>
+                                                @foreach ($regions as $region)
+                                                    <option value="{{$region->region}}">{{$region->region}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
         
                                         <div class="col-md-3">

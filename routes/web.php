@@ -184,7 +184,7 @@ Route::post('hr/jobList/update/{id}', [JobListController::class , 'update']);
 
 
 
-        //----------rank List   --------------- //
+//----------rank List   --------------- //
 
 Route::get('hr/ranks' , [RankController::class , 'index'] );
 Route::post('hr/ranks' , [RankController::class , 'store']);
@@ -192,16 +192,19 @@ Route::post('hr/ranks/delete/{id}' , [RankController::class , 'delete']);
 Route::get('hr/ranks/edit/{id}' , [RankController::class , 'edit']);
 Route::post('hr/ranks/update/{id}', [RankController::class , 'update']);
 
+
+ //----------Employee   --------------- //
+ Route::get('hr/employee' , [EmployeeController::class , 'index']);
+ Route::POST('new', [EmployeeController::class , 'storeEmployee']);
+ Route::post('department' , [EmployeeController::class , 'getAllDepartment']);
+ Route::post('jobList' , [EmployeeController::class , 'getAllJobTitle']);
+ Route::post('filter' , [EmployeeController::class , 'getJobCategory']);
+
 });
 
 
 
- //----------Employee   --------------- //
 
- Route::get('hr/employee' , [EmployeeController::class , 'index']);
- Route::post('department' , [EmployeeController::class , 'getAllDepartment']);
- Route::post('jobList' , [EmployeeController::class , 'getAllJobTitle']);
- Route::post('filter' , [EmployeeController::class , 'getJobCategory']);
 
 
 

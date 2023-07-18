@@ -66,7 +66,7 @@
                                 data-placeholder="Select a level" name="job_category">
                                 <option value>Select ...</option>
                                 @foreach ($jobCategory as $item)
-                                    <option @if(isset($find)) @if($find->job_category == $item->job_category_name) selected @endif @endif value="{{$item->job_category_name}}">{{$item->job_category_name}}</option>
+                                    <option @if(isset($find)) @if($find->job_category_id == $item->id) selected @endif @endif value="{{$item->id}}">{{$item->job_category_name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -81,7 +81,7 @@
                                 data-placeholder="Select a department" name="department">
                                 <option value>Select ...</option>
                                 @foreach ($department as $item)
-                                    <option @if(isset($find)) @if($find->department == $item->departmentName) selected @endif @endif value="{{$item->departmentName}}">{{$item->departmentName}}</option>
+                                    <option @if(isset($find)) @if($find->department_id == $item->id) selected @endif @endif value="{{$item->id}}">{{$item->departmentName}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -96,7 +96,7 @@
                                 data-placeholder="Select a starting salary" name="starting_salary">
                                 <option value>Select ...</option>
                                     @foreach ($salaryNotch as $item)
-                                <option @if(isset($find)) @if($find->starting_salary == ($item->pay_grade.' : ' . 'Notch '.$item->notch_position." : ".$item->currency.' '.$item->annual_salary)) selected @endif @endif   value="{{$item->pay_grade.' : ' . 'Notch '.$item->notch_position." : ".$item->currency.' '.$item->annual_salary}}">{{$item->pay_grade.' : ' . 'Notch '.$item->notch_position." : ".$item->currency.' '.$item->annual_salary}}</option>
+                                <option @if(isset($find)) @if($find->starting_salary_id == $item->id) selected @endif @endif   value="{{$item->id}}">{{$item->pay_grade.' : ' . 'Notch '.$item->notch_position." : ".$item->currency.' '.$item->annual_salary}}</option>
                             @endforeach
                             </select>
                         </div>
@@ -298,7 +298,7 @@
 
                                                         <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
-                                                                class="text-dark fw-bold text-hover-primary mb-1 fs-6">{{ Str::ucfirst($item->job_category) }}</a>
+                                                                class="text-dark fw-bold text-hover-primary mb-1 fs-6">{{ Str::ucfirst(App\Models\setup\JobCategories::find($item->job_category_id)->job_category_name) }}</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -309,7 +309,7 @@
 
                                                         <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
-                                                                class="text-dark fw-bold text-hover-primary mb-1 fs-6">{{ Str::ucfirst($item->department) }}</a>
+                                                                class="text-dark fw-bold text-hover-primary mb-1 fs-6">{{ Str::ucfirst(App\Models\setup\DepartmentList::find($item->department_id)->departmentName) }}</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -318,7 +318,7 @@
 
                                                         <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
-                                                                class="text-dark fw-bold text-hover-primary mb-1 fs-6">{{ Str::ucfirst($item->starting_salary) }}</a>
+                                                                class="text-dark fw-bold text-hover-primary mb-1 fs-6">{{ Str::ucfirst(App\Models\setup\SalaryNotch::find($item->starting_salary_id)->pay_grade).': Notch ' . Str::ucfirst(App\Models\setup\SalaryNotch::find($item->starting_salary_id)->notch_position.':') .  Str::ucfirst(App\Models\setup\SalaryNotch::find($item->starting_salary_id)->annual_salary) }}</a>
                                                         </div>
                                                     </div>
                                                 </td>

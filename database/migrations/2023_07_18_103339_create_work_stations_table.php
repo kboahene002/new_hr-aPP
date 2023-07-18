@@ -11,25 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('job_lists', function (Blueprint $table) {
+        Schema::create('work_stations', function (Blueprint $table) {
             $table->id();
-            $table->string('job_title');
-            $table->string('job_category_id');
-            $table->string('department_id');
-            $table->string('starting_salary_id');
-            $table->string('job_schedule')->nullable();
-            $table->string('description')->nullable();
+            $table->string('name');
             $table->timestamps();
         });
     }
-
-   
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('job_lists');
+        Schema::dropIfExists('work_stations');
     }
 };
