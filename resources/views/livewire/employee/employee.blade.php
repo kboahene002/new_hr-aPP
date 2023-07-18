@@ -24,9 +24,9 @@
                     <!--begin::Card body-->
                     <div class="card-body pt-5">
                         <!--begin::Form-->
-                       
 
-                        <form  class="form" enctype="multipart/form-data"    >
+
+                        <form  class="form" enctype="multipart/form-data">
                             <!--begin::Input group-->
 
                             <div class="row">
@@ -47,7 +47,7 @@
                                         </label>
                                         <!--end::Label-->
                                         <!--begin::Image input wrapper-->
-                                       
+
                                         <!--end::Image input wrapper-->
                                     </div>
                                 </div>
@@ -61,7 +61,7 @@
 
                                     <div class="row">
                                         <div class="col-md-3">
-                                            
+
                                             <div class="fv-row mb-7">
                                                 <!--begin::Label-->
 
@@ -78,7 +78,7 @@
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                
+
                                                 <input wire:model="surname" type="text" class="form-control " name="surname" value="" />
                                                 @error('surname') <span class="text-danger">{{ $message }}</span> @enderror
                                                 <!--end::Input-->
@@ -120,7 +120,7 @@
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <input wire:model='staff_id_no' type="text" class="form-control " name="staff_id_no"
+                                                <input wire:model='staff_id_no' type="text" class="form-control " name="staff_id"
                                                     value="" />
                                                 <!--end::Input-->
                                             </div>
@@ -469,7 +469,7 @@
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <input wire:model='dob' type="date" class="form-control " name="dob"
+                                                <input wire:model='dob' type="date" class="form-control " name="d_o_b"
                                                     value="" />
                                                 <!--end::Input-->
                                             </div>
@@ -550,21 +550,21 @@
                                             </div>
                                         </div>
                                     </div>
-        
+
                                     <div class="mt-5 row">
                                         <div class="col-md-3">
                                             <small class="badge badge-success">Job Information</small>
                                         </div>
                                     </div>
-        
-        
+
+
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="fv-row mb-7">
                                                 <!--begin::Label-->
                                                 <label class="fs-6 fw-semibold form-label mt-3">
                                                     <span class="required">Division</span>
-        
+
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
@@ -576,13 +576,13 @@
                                                 <!--end::Input-->
                                             </div>
                                         </div>
-        
+
                                         <div class="col-md-3">
                                             <div class="fv-row mb-7">
                                                 <!--begin::Label-->
                                                 <label class="fs-6 fw-semibold form-label mt-3">
                                                     <span class="required">Department</span>
-        
+
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
@@ -592,13 +592,13 @@
                                                 <!--end::Input-->
                                             </div>
                                         </div>
-        
+
                                         <div class="col-md-3">
                                             <div class="fv-row mb-7">
                                                 <!--begin::Label-->
                                                 <label class="fs-6 fw-semibold form-label mt-3">
                                                     <span class="required">Job Title</span>
-        
+
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
@@ -608,18 +608,18 @@
                                                 <!--end::Input-->
                                             </div>
                                         </div>
-        
-        
+
+
                                         <div class="col-md-3">
                                             <div class="fv-row mb-7">
                                                 <!--begin::Label-->
                                                 <label class="fs-6 fw-semibold form-label mt-3">
                                                     <span class="required">Job Category</span>
-        
+
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                {{-- <select class=form-control readonly="readonly" name="" id="job_category"> 
+                                                {{-- <select class=form-control readonly="readonly" name="" id="job_category">
                                                     <option value="...">..</option>
                                                     <option value="...">sfsdfsdfs</option>
                                                 </select> --}}
@@ -628,15 +628,15 @@
                                                 <!--end::Input-->
                                             </div>
                                         </div>
-        
-         
-        
+
+
+
                                         <div class="col-md-3">
                                             <div class="fv-row mb-7">
                                                 <!--begin::Label-->
                                                 <label class="fs-6 fw-semibold form-label mt-3">
                                                     <span class="required">First App Date</span>
-        
+
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
@@ -644,13 +644,13 @@
                                                 <!--end::Input-->
                                             </div>
                                         </div>
-        
+
                                         <div class="col-md-3">
                                             <div class="fv-row mb-7">
                                                 <!--begin::Label-->
                                                 <label class="fs-6 fw-semibold form-label mt-3">
                                                     <span class="required">Qualification</span>
-        
+
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
@@ -663,19 +663,19 @@
                                                 <!--end::Input-->
                                             </div>
                                         </div>
-        
+
                                         <div class="col-md-3">
                                             <div class="fv-row mb-7">
                                                 <!--begin::Label-->
                                                 <label class="fs-6 fw-semibold form-label mt-3">
                                                     <span class="required">Starting Salary</span>
-        
+
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <input type="text" name="starting_salary" readonly class="form-control form-control-solid" id="starting_salary" >
                                                 <input type="text" name="starting_salary_id" hidden class="form-control" id="starting_salary_id" >
-                                               
+
                                                 <!--end::Input-->
                                             </div>
                                         </div>
@@ -684,7 +684,7 @@
                                                 <!--begin::Label-->
                                                 <label class="fs-6 fw-semibold form-label mt-3">
                                                     <span class="required">Monthly Salary</span>
-        
+
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
@@ -692,54 +692,54 @@
                                                 <!--end::Input-->
                                             </div>
                                         </div>
-        
+
                                     </div>
-        
-        
+
+
                                     <div class="mt-5 row">
                                         <div class="col-md-3">
                                             <small class="badge badge-success">Contact information</small>
                                         </div>
                                     </div>
-        
-        
+
+
                                     <div class="mt-5 row">
                                         <div class="col-md-3">
                                             <!--begin::Label-->
                                             <label class="fs-6 fw-semibold form-label mt-3">
                                                 <span class="required">Postal Address</span>
-        
+
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <input wire:model='postal_address' type="text" class="form-control" name="postal_address">
                                             <!--end::Input-->
-        
+
                                         </div>
-        
+
                                         <div class="col-md-3">
-        
-        
+
+
                                             <!--begin::Label-->
                                             <label class="fs-6 fw-semibold form-label mt-3">
                                                 <span class="required">City</span>
-        
+
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <input wire:model='city' type="text" class="form-control" name="city">
                                             <!--end::Input-->
-        
-        
+
+
                                         </div>
-        
+
                                         <div class="col-md-3">
-        
-        
+
+
                                             <!--begin::Label-->
                                             <label class="fs-6 fw-semibold form-label mt-3">
                                                 <span class="required">City Region</span>
-        
+
                                             </label>
                                             <!--end::Label-->
                                             <select class="form-control" wire:model='city_region' name="city_region" id="">
@@ -749,28 +749,28 @@
                                                 @endforeach
                                             </select>
                                         </div>
-        
+
                                         <div class="col-md-3">
-        
-        
+
+
                                             <!--begin::Label-->
                                             <label class="fs-6 fw-semibold form-label mt-3">
                                                 <span class="required">Home Town</span>
-        
+
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <input wire:model='home_town' type="text" class="form-control" name="home_town">
                                             <!--end::Input-->
                                         </div>
-        
+
                                         <div class="col-md-3">
-        
-        
+
+
                                             <!--begin::Label-->
                                             <label class="fs-6 fw-semibold form-label mt-3">
                                                 <span class="required">Residential Address</span>
-        
+
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
@@ -781,31 +781,31 @@
                                             <!--begin::Label-->
                                             <label class="fs-6 fw-semibold form-label mt-3">
                                                 <span class="required">Phone Number</span>
-        
+
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <input wire:model='phone_number' type="text" class="form-control" name="phone_number">
                                             <!--end::Input-->
                                         </div>
-        
+
                                         <div class="col-md-3">
                                             <!--begin::Label-->
                                             <label class="fs-6 fw-semibold form-label mt-3">
                                                 <span class="required">Email Address</span>
-        
+
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <input wire:model='email' type="email" class="form-control" name="email">
                                             <!--end::Input-->
                                         </div>
-        
+
                                         <div class="col-md-3">
                                             <!--begin::Label-->
                                             <label class="fs-6 fw-semibold form-label mt-3">
                                                 <span class="required">Home Town Region</span>
-        
+
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
@@ -815,19 +815,19 @@
                                                     <option value="{{$region->region}}">{{$region->region}}</option>
                                                 @endforeach
                                             </select>
-                                           
+
                                             <!--end::Input-->
                                         </div>
-                                    
+
                                         <button type="submit" class="mt-5 btn btn-primary submit">Submit</button>
-        
+
                                     </div>
                                 </div>
                             </div>
 
                             <!--end::Input group-->
                             <!--begin::Input group-->
-                         
+
                             <!--end::Action buttons-->
                         </form>
                         <!--end::Form-->
