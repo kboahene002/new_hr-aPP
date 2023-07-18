@@ -5,7 +5,7 @@
 
 @livewire('employee.employee')
 
-<script src="{{asset('assets/employee.js')}}"> </script>
+ <script src="{{asset('assets/employee.js')}}"> </script>
 
 <script>
     

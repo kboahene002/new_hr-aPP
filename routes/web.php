@@ -199,6 +199,7 @@ Route::post('hr/ranks/update/{id}', [RankController::class , 'update']);
  Route::post('department' , [EmployeeController::class , 'getAllDepartment']);
  Route::post('jobList' , [EmployeeController::class , 'getAllJobTitle']);
  Route::post('filter' , [EmployeeController::class , 'getJobCategory']);
+ Route::get('hr/view-employee' , [EmployeeController::class , 'viewEmployer']);
 
 });
 

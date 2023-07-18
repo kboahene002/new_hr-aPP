@@ -134,16 +134,18 @@ class EmployeeController extends Controller
             'job_list' => $job_list ,
             'job_category' => $job_category,
             'notch' => $job_list->notch
-        ]);
-
-       
-        $starting_salary = $job_list->starting_salary;
-        
-        $job_category = JobCategories::where('job_category_name' , $job_list)->first();
-
-
-        $string = $starting_salary;
-       
+        ]); 
         
     }
+
+    public function viewEmployer(){
+        return view('employee.view-employee');
+    }
+
+    public function allEmployees(){
+        $all_employees = Employee::all();
+        return view('employee.all-employee' , ['allEmployee' => $all_employees]);
+    }
+
+
 }
