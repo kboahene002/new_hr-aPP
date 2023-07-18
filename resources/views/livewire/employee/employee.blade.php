@@ -54,7 +54,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-2">
-                                    <input type="file"  name="avatar" data-min-width="200" />
+                                    <input type="file" class="dropify" name="avatar" data-min-width="200" />
                                 </div>
                                 <div class="container pl-3 col-md-10">
                                     <small class="badge badge-success">Personal information</small>
