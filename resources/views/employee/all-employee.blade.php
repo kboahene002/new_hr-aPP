@@ -62,7 +62,7 @@
                                 <span class="card-label fw-bold fs-3 mb-1">List Of Employees</span>
                             <span class="text-muted mt-1 fw-semibold fs-7">()
                                     Employee's found
-                                    found</span>
+                                    </span>
                             </h3>
 
 
@@ -135,7 +135,7 @@
 
                                                         <div class="d-flex justify-content-start flex-column">
                                                             <a href="#" 
-                                                                class="text-dark fw-bold text-hover-primary mb-1 fs-6">{{ Str::ucfirst($item->staff_id_no)}}</a>
+                                                                class="text-dark fw-bold text-hover-primary mb-1 fs-6">{{ Str::ucfirst($item->staff_id)}}</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -145,7 +145,7 @@
 
                                                         <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
-                                                                class="text-dark fw-bold text-hover-primary mb-1 fs-6">{{ Str::ucfirst($item->job_title) }}</a>
+                                                                class="text-dark fw-bold text-hover-primary mb-1 fs-6">{{  Str::ucfirst(App\Models\setup\JobList::find($item->job_title_id)->job_title) }}</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -156,7 +156,7 @@
 
                                                         <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
-                                                                class="text-dark fw-bold text-hover-primary mb-1 fs-6">{{ $item->department }}</a>
+                                                                class="text-dark fw-bold text-hover-primary mb-1 fs-6">{{ App\Models\setup\DepartmentList::find($item->department_id)->departmentName }}</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -164,12 +164,9 @@
                                              
                                                 <td class="text-start">
 
-                                                    <a href="#" data-id="{{ $item->id }}"
-                                                        class="edit btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                        <i class="ki-duotone ki-pencil fs-2">
-                                                            <span class="path1"></span>
-                                                            <span class="path2"></span>
-                                                        </i>
+                                                    <a href="#" onclick="loadPage('viewEmployee/{{$item->id}}' , event  , $(this))" data-id="{{ $item->id }}"
+                                                        class=" btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                        view
                                                     </a>
                                                     <a href="#" data-id="{{ $item->id }}"
                                                         class="delete btn btn-icon  btn-bg-light btn-active-color-danger btn-sm">
@@ -234,5 +231,5 @@
 
 
 <script>
-    controller('jobList');
+    controller('viewEmployee');
 </script>

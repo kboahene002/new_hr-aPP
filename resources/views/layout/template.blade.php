@@ -587,7 +587,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin:Menu item-->
 											<div class="menu-item">
 												<!--begin:Menu link-->
-												<a onclick="loadPage('view-employee' , event  , $(this))" class="menu-link"
+												<a onclick="loadPage('all-employee' , event  , $(this))" class="menu-link"
 													href="#">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>

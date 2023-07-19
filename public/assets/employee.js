@@ -2,8 +2,9 @@
 $('.form').submit(function (e) {
 
     e.preventDefault();
+    showLoader();
     let form_data = new FormData(this);
-
+    $('.error').html('');
     $.ajax({
         'url': "new",
         'type': "post",
@@ -15,9 +16,17 @@ $('.form').submit(function (e) {
         processData: false,
         contentType: false,
         success: function (response) {
+            hideLoader();
             console.log(response)
         },
         error: function (data) {
+            hideLoader();
+            
+            $.each(data.responseJSON.data, function (index, value) {
+                console.log(data);
+                  $('.error').append("<li style='text-decoration:none;' class='text-danger'> " + value +
+                      "</li>");
+              });
             console.log(data)
         }
     });
@@ -73,9 +82,6 @@ $('#division').change(function () {
                                 $.each(data, function (index, item) {
                                     $('#job_title').append('<option value="' + item.id + '">' + item.job_title + '</option>');
                                 });
-
-
-                               
                             }
 
                         });
@@ -124,7 +130,7 @@ $('#division').change(function () {
                                 // $.each(data.notch, function (index, item) {
                                 //     $('#starting_salary').val( data.notch.annual_salry );
                                 // });
-                        
+ 
                     }
                 });
             }else{
@@ -137,3 +143,6 @@ $('#division').change(function () {
         console.log('empty');
     }
 });
+
+
+

@@ -29,8 +29,8 @@ class EmployeeController extends Controller
         $validation = Validator::make($request->all() , [
             'surname' => "required|string",
             'other_names' => "required|string",
-            'staff_id' => "required",
-            'ssn_number' => "required",
+            'staff_id' => "required|unique:employees",
+            'ssn_number' => "required|unique:employees",
             'gender' => "required",
             'country' => "required",
             'd_o_b' => "required",
@@ -113,6 +113,8 @@ class EmployeeController extends Controller
             'home_towm'=>$request->home_town,
             // 'avatar'=> $filename
          ]);
+         
+         return $this->index();
     }
 
     public function getAllDepartment(Request $request){
@@ -139,10 +141,6 @@ class EmployeeController extends Controller
             'job_list' => $job_list ,
             'job_category' => $job_category,
             'notch' => $job_list->notch
-<<<<<<< HEAD
-        ]); 
-        
-=======
         ]);
 
 
@@ -154,16 +152,22 @@ class EmployeeController extends Controller
         $string = $starting_salary;
 
 
->>>>>>> 201c11cc250e7f0b763ee716589ae23f8519beca
+
     }
 
-    public function viewEmployer(){
-        return view('employee.view-employee');
+    public function viewEmployee($id){
+        $employee = Employee::find($id)->first();
+        return view('employee.view-employee' , ['employee' => $employee]);
     }
 
     public function allEmployees(){
         $all_employees = Employee::all();
         return view('employee.all-employee' , ['allEmployee' => $all_employees]);
+    }
+
+    public function deleteEmployee($id){
+        $employee = Employee::find($id)->delete();
+        return $this->allEmployees();
     }
 
 

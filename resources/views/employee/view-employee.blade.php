@@ -56,7 +56,7 @@
                                         <div class="d-flex flex-column">
                                             <!--begin::Name-->
                                             <div class="d-flex align-items-center mb-2">
-                                                <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">Max Smith</a>
+                                                <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">{{$employee->surname." ".$employee->other_names}}</a>
                                                 <a href="#">
                                                     <i class="ki-duotone ki-verify fs-1 text-primary">
                                                         <span class="path1"></span>
@@ -88,7 +88,7 @@
                                             <!--end::Nav item-->
                                             <!--begin::Nav item-->
                                             <li class="nav-item mt-2">
-                                                <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="../../demo1/dist/pages/user-profile/projects.html">Projects</a>
+                                                <a class="nav-link text-active-primary ms-0 me-10 py-5 " href="../../demo1/dist/pages/user-profile/projects.html">Projects</a>
                                             </li>
                                             <!--end::Nav item-->
                                             <!--begin::Nav item-->
@@ -116,7 +116,7 @@
                                             <!--end::Nav item-->
                                             <!--begin::Nav item-->
                                             <li class="nav-item mt-2">
-                                                <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="../../demo1/dist/pages/user-profile/projects.html">Projects</a>
+                                                <a class="nav-link text-active-primary ms-0 me-10 py-5 " href="../../demo1/dist/pages/user-profile/projects.html">Projects</a>
                                             </li>
                                             <!--end::Nav item-->
                                             <!--begin::Nav item-->
@@ -169,18 +169,18 @@
                         <div class="card-body">
                             <!--begin::Details-->
                             <div class="d-flex flex-wrap ">
-                                <table>
+                                <table class="" id="department">
                                     <thead>
-                                        <th>sdfsfs</th>
+                                      <tr id="header-row">
+                                        <td>sdfsfsdf</td>
+                                      </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                dfsfsffsfdsfdfs
-                                            </td>
-                                        </tr>
+                                    <tbody id="table-body">
+                                      <tr>
+                                        <td>sfsdfsd</td>
+                                      </tr>
                                     </tbody>
-                                </table>
+                                  </table>
                             </div>
                            
                         </div>
@@ -213,3 +213,7 @@
         <!--end::Footer-->
     </div>
 </div>
+
+
+<script src="{{asset('assets/view-employee.js')}}">
+</script>

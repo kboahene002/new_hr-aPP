@@ -56,9 +56,14 @@
                                 <div class="col-md-2">
                                     <input type="file" class="dropify" name="avatar" data-min-width="200" />
                                 </div>
+                                
                                 <div class="container pl-3 col-md-10">
+                                    <div class="text-center text-danger">
+                                        <ul class="error">
+                                        </ul>
+                                    </div>
                                     <small class="badge badge-success">Personal information</small>
-
+                                   
                                     <div class="row">
                                         <div class="col-md-3">
 

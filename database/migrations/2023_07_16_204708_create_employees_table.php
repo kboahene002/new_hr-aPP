@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('marital_status_id');
             $table->string('work_station');
             $table->string('staff_status_id');
+            $table->string('avatar')->nullable();
 
 
             //Job Information 
